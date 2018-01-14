@@ -1,10 +1,7 @@
 
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { LoginComponent } from './components/login';
-=======
->>>>>>> master
 
 const routes: Routes = [
   {
@@ -15,13 +12,11 @@ const routes: Routes = [
   {
     path: 'welcome',
     component: AppComponent
-<<<<<<< HEAD
   },
   {
     path: 'login',
     component: LoginComponent
-=======
->>>>>>> master
+
   }
 ];
 

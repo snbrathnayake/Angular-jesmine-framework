@@ -12,7 +12,6 @@ export class AppComponent {
     translate.setDefaultLang('en');
   }
 
-<<<<<<< HEAD
   public switchLanguage(language: string): void {
     this.translate.use(language);
   }
@@ -20,9 +19,5 @@ export class AppComponent {
     console.log('Edit button has been clicked!');
 
   }
-=======
-  public switchLanguage(language: string) {
-    this.translate.use(language);
-  }
->>>>>>> master
+
 }
