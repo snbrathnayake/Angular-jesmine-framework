@@ -1,5 +1,6 @@
-<<<<<<< HEAD
+
 # AngularJesmineFramework (2018.1.1)
+jasmine componet contains unit test case for componets
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
