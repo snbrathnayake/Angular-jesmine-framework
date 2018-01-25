@@ -52,6 +52,9 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     elementHtml = fixture.debugElement.nativeElement;
     component = fixture.debugElement.componentInstance;
+
+
+    fixture.detectChanges();
   });
 
 
@@ -107,5 +110,22 @@ describe('AppComponent', () => {
     console.log(nodeAttributes.getNamedItem('src').value);
 
   });
+
+  xit('Setting enabled to false disables the submit button', () => {
+
+    const submitEl = fixture.debugElement.query(By.css('button'));
+    expect(submitEl.nativeElement.enabled).toBeTruthy();
+  });
+
+
+  it('should call onEditButtonClick()', async(() => {
+    spyOn(component, 'onEditButtonClick2');
+
+    let button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+    fixture.whenStable().then(() => {
+      expect(component.onEditButtonClick2).toHaveBeenCalled();
+    })
+  }));
 
 });
