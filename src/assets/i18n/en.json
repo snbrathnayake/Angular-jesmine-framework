@@ -3,5 +3,6 @@
     "Intro": "Hello I am Arthur",
     "EN":"English Language",
     "FR":"French Language",
+    "FOO":"Logs Application",
     "HELLO": "Welcome to my Angular application!<br><strong>This is an amazing app which uses the latest technologies!</strong>"
 }

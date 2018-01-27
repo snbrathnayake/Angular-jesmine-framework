@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  message: string;
 
   private attempt: number = 1;
+  title: string = "Login Application";
+  public username: string;
   constructor() { }
 
   ngOnInit() { }
@@ -23,5 +27,15 @@ export class LoginComponent implements OnInit {
   public auth(name: string): string {
     return 'auth '+name;
   }
+
+  showUername(){
+    this.username = ' sameera'
+  }
+
+  eventPop(msg:string){
+   this.message = msg;
+   alert(this.message)
+  }
+
 
 }
