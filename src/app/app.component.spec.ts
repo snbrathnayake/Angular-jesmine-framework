@@ -52,6 +52,9 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     elementHtml = fixture.debugElement.nativeElement;
     component = fixture.debugElement.componentInstance;
+
+
+    fixture.detectChanges();
   });
 
 
