@@ -1,2 +1,11 @@
-<hr>
-<h5>login webpage</h5>
+<div class="login">
+    <h2>{{ 'FOO' | translate }}</h2>
+
+    <h5>login webpage</h5>
+
+    <br>
+    <button class="btn btn-info" (click)="showUername()">create login</button>
+    <button class="btn btn-info evn" (click)="eventPop('Event is pop')">Event</button>
+    <br>
+    {{ username }}
+</div>
