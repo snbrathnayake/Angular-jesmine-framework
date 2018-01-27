@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routes';
 import { LoginComponent } from './components/login/';
 import { partialLoader } from './app.localization ';
+import { UsersService } from './api/users.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { partialLoader } from './app.localization ';
     }),
  
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
