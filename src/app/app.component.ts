@@ -15,10 +15,10 @@ export class AppComponent {
   public switchLanguage(language: string): void {
     this.translate.use(language);
   }
-  public onEditButtonClick2(){
+
+  public onEditButtonClick(){
+
     console.log('Edit button has been clicked!');
 
   }
 
-
-}
