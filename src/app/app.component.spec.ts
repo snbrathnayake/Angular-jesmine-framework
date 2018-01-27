@@ -111,21 +111,4 @@ describe('AppComponent', () => {
 
   });
 
-  xit('Setting enabled to false disables the submit button', () => {
-
-    const submitEl = fixture.debugElement.query(By.css('button'));
-    expect(submitEl.nativeElement.enabled).toBeTruthy();
-  });
-
-
-  it('should call onEditButtonClick()', async(() => {
-    spyOn(component, 'onEditButtonClick2');
-
-    let button = fixture.debugElement.nativeElement.querySelector('button');
-    button.click();
-    fixture.whenStable().then(() => {
-      expect(component.onEditButtonClick2).toHaveBeenCalled();
-    })
-  }));
-
 });
