@@ -100,6 +100,8 @@ describe('LoginComponent', () => {
     evnBtn.triggerEventHandler("click", null);
     fixture.detectChanges();
     expect(component.message).toEqual("Event is pop");
+    // jasmine.log("hello");
+    
   });
 
 });
