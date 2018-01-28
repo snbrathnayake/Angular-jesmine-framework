@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   private attempt: number = 1;
   title: string = "Login Application";
   public username: string;
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() { }
 
@@ -37,5 +38,13 @@ export class LoginComponent implements OnInit {
    alert(this.message)
   }
 
+  printDoc(){
+     console.log('print doc?');
+  }
+  userAuth(auth: boolean){
 
+    if(auth){
+      this.router.navigate(['/dashboard']);
+    }
+  }
 }
