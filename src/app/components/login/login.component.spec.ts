@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
 import { DebugElement } from '@angular/core';
@@ -6,6 +6,10 @@ import { BrowserModule, By } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateService, TranslateModule } from '@ngx-translate/core';
 import { partialLoader } from '../../app.localization ';
+import { RouterLinkWithHref, Router, RouterModule } from '@angular/router';
+import { routing } from '../../app.routes';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -21,7 +25,9 @@ describe('LoginComponent', () => {
       ],
       imports: [
         BrowserModule,
+        RouterModule,
         HttpClientModule,
+        RouterTestingModule.withRoutes([]),
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -32,6 +38,7 @@ describe('LoginComponent', () => {
       ],
 
       providers: [
+
         TranslateService,
         HttpClient
       ]
@@ -95,13 +102,38 @@ describe('LoginComponent', () => {
 
   })
 
-  it('should display message : [Event is pop]' , () => {
+  it('should display message : [Event is pop]', () => {
     let evnBtn = fixture.debugElement.query(By.css(".evn"));
     evnBtn.triggerEventHandler("click", null);
     fixture.detectChanges();
     expect(component.message).toEqual("Event is pop");
     // jasmine.log("hello");
-    
+
   });
+
+  it('should print log to console ', async(() => {
+    spyOn(console, 'log');
+
+    component.printDoc();
+
+    fixture.detectChanges();
+    expect(console.log).toHaveBeenCalledWith('print doc?');
+  }));
+
+  // it('should call Router.navigateByUrl("forms/:id") with the ID of the form', inject([Router], (router: Router) => {
+  //   const spy = spyOn(router, 'navigateByUrl');
+  //   component.userAuth(true);
+  //   const url = spy.calls.first().args[0];
+  //   expect(url).toBe('/form/23');
+  // }));
+
+  it('should call Router.navigate [/dashboard]', async(() => {
+
+    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    component.userAuth(true);
+    fixture.detectChanges();
+    expect(navigateSpy).toHaveBeenCalledWith(['/dashboard']);
+
+  }));
 
 });

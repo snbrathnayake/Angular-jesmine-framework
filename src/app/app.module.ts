@@ -7,14 +7,18 @@ import { routing } from './app.routes';
 import { LoginComponent } from './components/login/';
 import { partialLoader } from './app.localization ';
 import { UsersService } from './api/users.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     HttpClientModule,
     routing,
     TranslateModule.forRoot({
